@@ -2,5 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/IoAbstraction" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LiquidCrystalIO" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SimpleCollections" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/TaskManagerIO" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tcMenu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tcUnicodeHelper" vcs="Git" />
   </component>
 </project>
