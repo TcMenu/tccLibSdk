@@ -9,15 +9,13 @@ These libraries provide several useful extensions that make programming embedded
 * AdaFruit Fork in directory AdafruitGFXNativePort - MIT license
 * All other code outside that folder - Apache license.
 
+### Using our libraries in Arduino and PlatformIO
+
+This repo is just a grouping of all the libraries for those that wish to use CMake with a native toolchain. For Arduino and platformIo use simply use library manager (or the links below)
+
 ## How to use these libraries
 
 All the coders corner libraries as a CMake artifact usable directly by Pico SDK. These are now the main source for most of our libraries, and the arduino libs are built using the script [copyOverLibs.sh in the z_scripts folder](z_scripts%2FcopyOverLibs.sh).
-
-### Using in Arduino and PlatformIO
-
-This repo is just a grouping of all the libraries for those that wish to use CMake with a native toolchain.
-
-For Arduino and PlatformIO use the links below:
 
 * https://github.com/davetcc/TaskManagerIO
 * https://github.com/davetcc/tcMenuLib
