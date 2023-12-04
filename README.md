@@ -32,7 +32,7 @@ For all CMake cases you need a copy of all the libraries, run git submodule init
 
 Once this is done, ensure that you have CMake installed along with any native toolchains needed.
 
-Please note that commercial support for this CMake toolchain is offered, [contact us via our website for details](https://www.thecoderscorner.com), _no questions about the commercial use of this toolchain should be asked in the regular discussion forums_.
+Please note that commercial support for this CMake toolchain is offered, [contact us via our website for details](https://www.thecoderscorner.com). _Please do not ask questions about the commercial use of this toolchain in the regular discussion forums_.
 
 ### Using in PicoSDK
 
