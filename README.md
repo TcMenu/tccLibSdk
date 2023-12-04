@@ -32,6 +32,8 @@ For all CMake cases you need a copy of all the libraries, run git submodule init
 
 Once this is done, ensure that you have CMake installed along with any native toolchains needed.
 
+Please note that commercial support for this CMake toolchain is offered, [contact us via our website for details](https://www.thecoderscorner.com), _no questions about the commercial use of this toolchain should be asked in the regular discussion forums_.
+
 ### Using in PicoSDK
 
 As per all other PicoSDK applications, you need to set up the environment variables and ensure these libraries are available in the path. For the initial MVP we assume you have a local to project copy of these libraries similar to how the examples folder works, we'll sort this out properly after 4.2 and mobile app is released.
