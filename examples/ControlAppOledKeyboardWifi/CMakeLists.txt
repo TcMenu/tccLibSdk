@@ -7,7 +7,6 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(ControlAppOledKeyboardWifi
         generated/tcMenuAdaFruitGfxMono.cpp
         generated/ControlAppOledKeyboardWifi_menu.cpp
-        TcThemeBuilder.cpp
         tcmenu_main.cpp
 )
 

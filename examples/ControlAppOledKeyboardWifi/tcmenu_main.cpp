@@ -1,5 +1,5 @@
 #include "generated/ControlAppOledKeyboardWifi_menu.h"
-#include "TcThemeBuilder.h"
+#include <graphics/TcThemeBuilder.h>
 #include "Fonts/Org_01.h"
 #include <PlatformDetermination.h>
 #include <TaskManagerIO.h>
@@ -7,10 +7,11 @@
 // This variable is the RAM data for scroll choice item Choices
 char ramChoiceData[] = "1\0        2\0        3\0        4\0        5\0        ~";
 
+void setupTheme();
 
 void setup() {
     setupMenu();
-
+    setupTheme();
 }
 
 int main() {
@@ -46,7 +47,7 @@ void setupTheme() {
             .withJustification(tcgfx::GridPosition::JUSTIFY_CENTER_NO_VALUE)
             .apply();
 
-    themeBuilder.menuItemOverride(menuAnalog)
+    themeBuilder.menuItemOverride(menuBool)
         .withImageXbmp(Coord(20, 20), defActiveIcon)
         .onRowCol(2, 3, 1);
 

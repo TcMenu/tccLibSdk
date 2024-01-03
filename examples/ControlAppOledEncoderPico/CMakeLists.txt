@@ -10,8 +10,6 @@ add_executable(ControlAppOledEncoderPico
         tcmenu_main.cpp
         generated/StdioTransport.h
         generated/StdioTransport.cpp
-        ../ControlAppOledKeyboardWifi/TcThemeBuilder.cpp
-        ../ControlAppOledKeyboardWifi/TcThemeBuilder.h
 )
 
 pico_enable_stdio_usb(ControlAppOledEncoderPico 1)
