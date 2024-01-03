@@ -32,3 +32,4 @@
 *.app
 /cmake-build-debug/
 /examples/ControlAppOledEncoderPico/.backup/
+/examples/ControlAppOledKeyboardWifi/.backup/

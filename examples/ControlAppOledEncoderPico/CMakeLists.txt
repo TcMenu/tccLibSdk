@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(UsingIoAbstraction C CXX ASM)
+project(ControlAppOledEncoderPico C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
@@ -10,6 +10,8 @@ add_executable(ControlAppOledEncoderPico
         tcmenu_main.cpp
         generated/StdioTransport.h
         generated/StdioTransport.cpp
+        ../ControlAppOledKeyboardWifi/TcThemeBuilder.cpp
+        ../ControlAppOledKeyboardWifi/TcThemeBuilder.h
 )
 
 pico_enable_stdio_usb(ControlAppOledEncoderPico 1)

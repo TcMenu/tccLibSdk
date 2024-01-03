@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <hardware/spi.h>
 
-#define OLED_IS_I2C false
+#define OLED_IS_I2C true
 
 #if OLED_IS_I2C
 #include <oled/AdafruitSSD1306I2c.h>
@@ -36,7 +36,7 @@ int main() {
     gpio_pull_up(PICO_DEFAULT_I2C_SDA_PIN);
     gpio_pull_up(PICO_DEFAULT_I2C_SCL_PIN);
     ioaWireBegin(i2c_default);
-    display = new AdafruitSSD1306I2c(defaultWireTypePtr, 0xff, OLED_ADDRESS_I2C, 64, 128, SH_1106);
+    display = new AdafruitSSD1306I2c(defaultWireTypePtr, 0xff, OLED_ADDRESS_I2C, 64, 128, ENCMODE_UTF8, SH_1106);
 #else
     // This example will use SPI0 at 10MHz.
     spi_init(spi_default, SPI_TEN_MHZ);
@@ -69,6 +69,6 @@ int main() {
     });
 
     while(true) {
-        taskManager.rpiSleepingRunLoop();
+        taskManager.runLoop();
     }
 }
