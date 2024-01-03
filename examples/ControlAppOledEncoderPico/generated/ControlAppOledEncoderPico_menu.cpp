@@ -113,7 +113,7 @@ void setupMenu() {
     renderer.setTitleMode(BaseGraphicalRenderer::TITLE_FIRST_ROW);
     renderer.setUseSliderForAnalog(false);
     renderer.enableTcUnicode();
-    installMonoBorderedTheme(renderer, MenuFontDef(&Org_01, 1), MenuFontDef(&Org_01, 1), true);
+    setupTheme();
     CombinedMessageProcessor::setFormTemplatesInFlash(tcMenuAllEmbeddedForms);
 }
 

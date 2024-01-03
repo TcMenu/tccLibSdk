@@ -36,7 +36,6 @@ void setupTheme() {
 
     themeBuilder.defaultTitleProperties()
             .withBorder(MenuBorder(0, 0, 2, 0))
-            .withAdaFont(&Org_01)
             .withJustification(tcgfx::GridPosition::JUSTIFY_CENTER_NO_VALUE)
             .apply();
     themeBuilder.defaultItemProperties()
