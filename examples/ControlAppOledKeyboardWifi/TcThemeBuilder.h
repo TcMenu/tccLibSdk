@@ -139,7 +139,10 @@ namespace tcgfx {
         color_t defaultPalette[4] = {};
         MenuPadding globalItemPadding = MenuPadding(1);
         MenuPadding globalTitlePadding = MenuPadding(2);
+        const void *fontData = nullptr;
+        uint8_t fontMag = 1;
         uint8_t defaultSpacing = 1;
+
     public:
         explicit TcThemeBuilder(GraphicsDeviceRenderer& renderer) : renderer(renderer), factory(renderer.getGraphicsPropertiesFactory()) {
             auto *drawable = renderer.getDeviceDrawable();
@@ -148,6 +151,24 @@ namespace tcgfx {
 
         TcThemeBuilder &withSelectedColors(color_t bg, color_t fg) {
             factory.setSelectedColors(bg, fg);
+            return *this;
+        }
+
+        TcThemeBuilder& withAdaFont(const GFXfont* font, int mag = 1) {
+            fontData = font;
+            fontMag = min(1, mag);
+            return *this;
+        }
+
+        TcThemeBuilder& withTcUnicodeFont(const UnicodeFont* font) {
+            fontData = font;
+            fontMag = 0;
+            return *this;
+        }
+
+        TcThemeBuilder& withNativeFont(void* data, uint8_t mag) {
+            fontData = data;
+            fontMag = mag;
             return *this;
         }
 
@@ -198,6 +219,13 @@ namespace tcgfx {
             return propertiesBuilder;
         }
 
+        TcThemeBuilder& withPalette(const color_t* cols);
+
+        TcThemeBuilder& enableCardLayoutWithXbmImages(Coord iconSize, const uint8_t* leftIcon, const uint8_t* rightIcon, bool isMono);
+        TcThemeBuilder& setMenuAsCard(SubMenuItem& item);
+
+        void apply();
+
         ConfigurableItemDisplayPropertiesFactory getItemFactory() { return factory; }
 
         MenuPadding getPaddingFor(ItemDisplayProperties::ComponentType type) {
@@ -216,13 +244,14 @@ namespace tcgfx {
             return defaultPalette;
         }
 
+        const void* getDefaultFontData() {
+            return fontData;
+        }
 
-        TcThemeBuilder& withPalette(const color_t* cols);
+        uint8_t getDefaultFontMag() const {
+            return fontMag;
+        }
 
-        TcThemeBuilder& enableCardLayoutWithXbmImages(Coord iconSize, const uint8_t* leftIcon, const uint8_t* rightIcon, bool isMono);
-        TcThemeBuilder& setMenuAsCard(SubMenuItem& item);
-
-        void apply();
     };
 
 }

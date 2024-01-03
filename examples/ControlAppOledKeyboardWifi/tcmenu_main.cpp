@@ -30,7 +30,8 @@ void setupTheme() {
             .withItemPadding(MenuPadding(2))
             .withTitlePadding(MenuPadding(1))
             .withPalette(defaultItemPaletteMono)
-            .withSpacing(1);
+            .withSpacing(1)
+            .withAdaFont(&Org_01);
 
     themeBuilder.defaultTitleProperties()
             .withBorder(MenuBorder(0, 0, 2, 0))
@@ -38,11 +39,9 @@ void setupTheme() {
             .withJustification(tcgfx::GridPosition::JUSTIFY_CENTER_NO_VALUE)
             .apply();
     themeBuilder.defaultItemProperties()
-            .withAdaFont(&Org_01)
             .withJustification(tcgfx::GridPosition::JUSTIFY_TITLE_LEFT_VALUE_RIGHT)
             .apply();
     themeBuilder.defaultActionProperties()
-            .withAdaFont(&Org_01)
             .withBorder(MenuBorder(1))
             .withJustification(tcgfx::GridPosition::JUSTIFY_CENTER_NO_VALUE)
             .apply();

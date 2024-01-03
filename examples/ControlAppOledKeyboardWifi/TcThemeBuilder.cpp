@@ -50,6 +50,8 @@ void ThemePropertiesBuilder::initForLevel(TcThemeBuilder *b, ItemDisplayProperti
     currentLevel = level;
     menuItem = item;
     themeBuilder = b;
+    fontData = themeBuilder->getDefaultFontData();
+    fontMag = themeBuilder->getDefaultFontMag();
     padding = themeBuilder->getPaddingFor(compType);
     spacing = themeBuilder->getDefaultSpacing();
     memcpy(palette, themeBuilder->getDefaultPalette(), sizeof palette);
@@ -59,15 +61,15 @@ void ThemePropertiesBuilder::initForLevel(TcThemeBuilder *b, ItemDisplayProperti
 
     if(level != THEME_GLOBAL) {
         auto props = b->getItemFactory().configFor(nullptr, compType);
-        fontData = props->getFont();
-        fontMag = props->getFontMagnification();
+        if(props->getFont() != nullptr) {
+            fontData = props->getFont();
+            fontMag = props->getFontMagnification();
+        }
         border = props->getBorder();
         justification = props->getDefaultJustification();
     } else {
         justification = GridPosition::JUSTIFY_TITLE_LEFT_VALUE_RIGHT;
         border = MenuBorder(0);
-        fontMag = 0;
-        fontData = nullptr;
     }
 }
 
