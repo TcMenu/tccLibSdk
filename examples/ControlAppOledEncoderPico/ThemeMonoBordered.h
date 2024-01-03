@@ -3,12 +3,9 @@
 
 #include "graphics/TcThemeBuilder.h"
 
-color_t defaultItemPaletteMono[] = {WHITE, BLACK, WHITE, WHITE};
-
-#define TITLE_BORDER_THICKNESS 2
-#define TITLE_SPACING 2
 
 void setupTheme() {
+    color_t defaultItemPaletteMono[] = {WHITE, BLACK, WHITE, WHITE};
     TcThemeBuilder themeBuilder(renderer);
     themeBuilder.withSelectedColors(0, 1)
         .withItemPadding(MenuPadding(1))
@@ -23,8 +20,7 @@ void setupTheme() {
         .apply();
 
     themeBuilder.defaultActionProperties()
-            .withBorder(MenuBorder(0, 0, 1, 0))
-            .withJustification(tcgfx::GridPosition::JUSTIFY_CENTER_NO_VALUE)
+            .withJustification(tcgfx::GridPosition::JUSTIFY_TITLE_LEFT_VALUE_RIGHT)
             .apply();
 
     themeBuilder.defaultTitleProperties()
