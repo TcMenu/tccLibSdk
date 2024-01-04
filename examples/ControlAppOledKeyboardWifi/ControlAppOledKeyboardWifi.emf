@@ -212,7 +212,8 @@
           "Pizza",
           "Pasta",
           "Salad",
-          "Soup"
+          "Soup",
+          "%menu.enum.chips"
         ],
         "name": "Foods",
         "variableName": "Foods",
@@ -264,7 +265,7 @@
       "parentId": 14,
       "type": "runtimeList",
       "item": {
-        "initialRows": 5,
+        "initialRows": 6,
         "listCreationMode": "FLASH_ARRAY",
         "name": "Cars",
         "variableName": "Cars",
@@ -513,7 +514,8 @@
         "BMW",
         "Vauxhaul",
         "Renault",
-        "Mercedes"
+        "Mercedes",
+        "%menu.list.ferrari"
       ]
     }
   ]
