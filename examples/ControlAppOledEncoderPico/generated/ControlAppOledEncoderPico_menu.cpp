@@ -10,7 +10,7 @@
 
 #include <tcMenu.h>
 #include "ControlAppOledEncoderPico_menu.h"
-#include "../ThemeMonoBordered.h"
+#include "../appTheme.cpp"
 #include <Fonts/Org_01.h>
 
 // Global variable declarations
