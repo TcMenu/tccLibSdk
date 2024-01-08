@@ -58,15 +58,28 @@ void setupTheme() {
             .withJustification(tcgfx::GridPosition::JUSTIFY_CENTER_NO_VALUE)
             .apply();
 
-    themeBuilder.menuItemOverride(menuDirect)
-            .onRowCol(3, 2, 1)
-            .withImageXbmp(Coord(20, 20), directBitmapOff, directBitmapOn)
-            .apply();
 
-    themeBuilder.menuItemOverride(menuMute)
-            .onRowCol(3, 2, 2)
-            .withImageXbmp(Coord(20, 20), speakerBitmapOff, speakerBitmapOn)
-            .apply();
+    themeBuilder.defineRowWithCols(3, 2, [] (TcThemeBuilder& t) {
+        t.menuItemOverride(menuDirect)
+                .onCol(1)
+                .withImageXbmp(Coord(20, 20), directBitmapOff, directBitmapOn)
+                .apply();
+
+        t.menuItemOverride(menuMute)
+                .onCol(2)
+                .withImageXbmp(Coord(20, 20), speakerBitmapOff, speakerBitmapOn)
+                .apply();
+    });
+
+//    themeBuilder.menuItemOverride(menuDirect)
+//            .onCol(1, 2).onRow(3)
+//            .withImageXbmp(Coord(20, 20), directBitmapOff, directBitmapOn)
+//            .apply();
+//
+//    themeBuilder.menuItemOverride(menuMute)
+//            .onCol(2, 2).onRow(3)
+//            .withImageXbmp(Coord(20, 20), speakerBitmapOff, speakerBitmapOn)
+//            .apply();
 
     themeBuilder.apply();
 }
