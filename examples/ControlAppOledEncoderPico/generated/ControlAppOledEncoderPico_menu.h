@@ -14,13 +14,12 @@
 #include <PlatformDetermination.h>
 #include <tcMenu.h>
 
-#include <tcUnicodeHelper.h>
 #include "Adafruit_SSD1306.h"
 #include "tcMenuAdaFruitGfxMono.h"
 #include <RemoteConnector.h>
 #include "StdioTransport.h"
-#include <ScrollChoiceMenuItem.h>
 #include <RuntimeMenuItem.h>
+#include <ScrollChoiceMenuItem.h>
 #include <IoAbstraction.h>
 #include <EepromItemStorage.h>
 
@@ -30,12 +29,14 @@ extern TcMenuRemoteServer remoteServer;
 extern AdafruitSSD1306Spi* gfx;
 extern AdafruitDrawable gfxDrawable;
 extern GraphicsDeviceRenderer renderer;
-extern const GFXfont Org_01;
 
 // Any externals needed by IO expanders, EEPROMs etc
 
 
 // Global Menu Item exports
+extern const char* const enumStrFlashList[];
+extern ListRuntimeMenuItem menuFlashList;
+extern ListRuntimeMenuItem menuListCustom;
 extern BooleanMenuItem menuSet2B;
 extern ActionMenuItem menuSet2A;
 extern Rgb32MenuItem menuSet1D;
@@ -70,6 +71,7 @@ void setupMenu();
 // Callback functions must always include CALLBACK_FUNCTION after the return type
 #define CALLBACK_FUNCTION
 
+int fnListCustomRtCall(RuntimeMenuItem* item, uint8_t row, RenderFnMode mode, char* buffer, int bufferSize);
 void CALLBACK_FUNCTION onEnableChange(int id);
 void CALLBACK_FUNCTION onShowDialog(int id);
 void CALLBACK_FUNCTION onVolumeChanged(int id);

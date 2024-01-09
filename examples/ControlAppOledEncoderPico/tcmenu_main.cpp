@@ -11,6 +11,8 @@
 #define I2C_SDA 10
 #define I2C_CLK 11
 
+void setupTheme();
+
 void setup() {
     // prepare the I2C bus before setting up the menu
     i2c_init(i2c_default, 100 * 1000);
@@ -35,6 +37,7 @@ void setup() {
     stdio_init_all();
 
     setupMenu();
+    setupTheme();
 
     setTitlePressedCallback([](int) {
         showVersionDialog(&applicationInfo);
@@ -73,8 +76,6 @@ void CALLBACK_FUNCTION onShowDialog(int id) {
     });
 }
 
-
-
 void CALLBACK_FUNCTION onEnableChange(int id) {
     bool set1Visible = menuEnable.getCurrentValue() == 0;
 
@@ -88,4 +89,14 @@ void CALLBACK_FUNCTION onEnableChange(int id) {
 
     // as we've structurally changed the layout of the active menu, we have to tell menu mgr
     menuMgr.notifyStructureChanged();
+}
+
+// This callback needs to be implemented by you, see the below docs:
+//  1. List Docs - https://www.thecoderscorner.com/products/arduino-libraries/tc-menu/menu-item-types/list-menu-item/
+//  2. ScrollChoice Docs - https://www.thecoderscorner.com/products/arduino-libraries/tc-menu/menu-item-types/scrollchoice-menu-item/
+int CALLBACK_FUNCTION fnListCustomRtCall(RuntimeMenuItem* item, uint8_t row, RenderFnMode mode, char* buffer, int bufferSize) {
+    switch(mode) {
+    default:
+        return defaultRtListCallback(item, row, mode, buffer, bufferSize);
+    }
 }

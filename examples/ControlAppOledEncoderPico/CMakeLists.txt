@@ -8,6 +8,7 @@ add_executable(ControlAppOledEncoderPico
         generated/ControlAppOledEncoderPico_menu.cpp
         generated/tcMenuAdaFruitGfxMono.cpp
         tcmenu_main.cpp
+        appTheme.cpp
         generated/StdioTransport.h
         generated/StdioTransport.cpp
 )

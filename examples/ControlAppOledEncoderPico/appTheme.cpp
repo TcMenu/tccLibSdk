@@ -1,8 +1,9 @@
 #ifndef TCMENU_THEME_MONO_BORDER
 #define TCMENU_THEME_MONO_BORDER
 
-#include "graphics/TcThemeBuilder.h"
-
+#include <graphics/TcThemeBuilder.h>
+#include "generated/ControlAppOledEncoderPico_menu.h"
+#include <Fonts/Org_01.h>
 
 // Direct width=20, height=20, size=60
 const uint8_t directBitmapOn[] PROGMEM = {
@@ -35,9 +36,12 @@ const uint8_t speakerBitmapOff[] PROGMEM = {
 
 
 void setupTheme() {
+
     color_t defaultItemPaletteMono[] = {WHITE, BLACK, WHITE, WHITE};
     TcThemeBuilder themeBuilder(renderer);
     themeBuilder.withSelectedColors(0, 1)
+        .withRenderingSettings(BaseGraphicalRenderer::TITLE_FIRST_ROW, false)
+        .enablingTcUnicode()
         .withItemPadding(MenuPadding(1))
         .withTitlePadding(MenuPadding(1))
         .withStandardLowResCursorIcons()

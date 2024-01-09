@@ -10,8 +10,6 @@
 
 #include <tcMenu.h>
 #include "ControlAppOledEncoderPico_menu.h"
-#include "../appTheme.cpp"
-#include <Fonts/Org_01.h>
 
 // Global variable declarations
 const  ConnectorLocalInfo applicationInfo = { "ControlAppOledEncoderPico", "3acc6301-dadd-4730-b142-9541180d2aa8" };
@@ -25,6 +23,18 @@ StdioTransport stdioTransport(255);
 TagValueRemoteServerConnection stdioConnection(stdioTransport, stdioInitializer);
 
 // Global Menu Item declarations
+const char enumStrFlashList_0[] = "Ford Focus";
+const char enumStrFlashList_1[] = "Ford Escort";
+const char enumStrFlashList_2[] = "Ford Smax";
+const char enumStrFlashList_3[] = "Ford Fiesta";
+const char enumStrFlashList_4[] = "Ford Focus RS";
+const char enumStrFlashList_5[] = "Ford Escort RS";
+const char enumStrFlashList_6[] = "Escort Cosworth";
+const char* const enumStrFlashList[]  = { enumStrFlashList_0, enumStrFlashList_1, enumStrFlashList_2, enumStrFlashList_3, enumStrFlashList_4, enumStrFlashList_5, enumStrFlashList_6 };
+const AnyMenuInfo minfoFlashList = { "Flash List", 25, 0xffff, 0, NO_CALLBACK };
+ListRuntimeMenuItem menuFlashList(&minfoFlashList, 7, enumStrFlashList, ListRuntimeMenuItem::FLASH_ARRAY, nullptr, INFO_LOCATION_PGM);
+const AnyMenuInfo minfoListCustom = { "List Custom", 24, 0xffff, 0, NO_CALLBACK };
+ListRuntimeMenuItem menuListCustom(&minfoListCustom, 10, fnListCustomRtCall, &menuFlashList, INFO_LOCATION_PGM);
 const BooleanMenuInfo minfoSet2B = { "Set 2B", 23, 0xffff, 1, NO_CALLBACK, NAMING_TRUE_FALSE };
 BooleanMenuItem menuSet2B(&minfoSet2B, false, nullptr, INFO_LOCATION_PGM);
 const AnyMenuInfo minfoSet2A = { "Set 2A", 22, 0xffff, 0, NO_CALLBACK };
@@ -44,7 +54,7 @@ const EnumMenuInfo minfoEnable = { "Enable", 17, 0xffff, 1, onEnableChange, enum
 EnumMenuItem menuEnable(&minfoEnable, 0, &menuSet1A, INFO_LOCATION_PGM);
 const SubMenuInfo minfoDynamic = { "Dynamic", 16, 0xffff, 0, NO_CALLBACK };
 BackMenuItem menuBackDynamic(&minfoDynamic, &menuEnable, INFO_LOCATION_PGM);
-SubMenuItem menuDynamic(&minfoDynamic, &menuBackDynamic, nullptr, INFO_LOCATION_PGM);
+SubMenuItem menuDynamic(&minfoDynamic, &menuBackDynamic, &menuListCustom, INFO_LOCATION_PGM);
 const char enumStrDialogActive_0[] = "Item 0";
 const char enumStrDialogActive_1[] = "Item 1";
 const char* const enumStrDialogActive[]  = { enumStrDialogActive_0, enumStrDialogActive_1 };
@@ -93,6 +103,7 @@ AnalogMenuItem menuVolume(&minfoVolume, 0, &menuChannel, INFO_LOCATION_PGM);
 
 void setupMenu() {
     // First we set up eeprom and authentication (if needed).
+    CombinedMessageProcessor::setFormTemplatesInFlash(tcMenuAllEmbeddedForms);
     setSizeBasedEEPROMStorageEnabled(true);
     // Now add any readonly, non-remote and visible flags.
     menuA0Level.setReadOnly(true);
@@ -110,11 +121,6 @@ void setupMenu() {
     switches.init(internalDigitalIo(), SWITCHES_POLL_KEYS_ONLY, true);
     menuMgr.initForEncoder(&renderer, &menuVolume, 16, 17, 21);
     remoteServer.addConnection(&stdioConnection);
-    renderer.setTitleMode(BaseGraphicalRenderer::TITLE_FIRST_ROW);
-    renderer.setUseSliderForAnalog(false);
-    renderer.enableTcUnicode();
-    setupTheme();
-    CombinedMessageProcessor::setFormTemplatesInFlash(tcMenuAllEmbeddedForms);
 }
 
 // Embedded form data

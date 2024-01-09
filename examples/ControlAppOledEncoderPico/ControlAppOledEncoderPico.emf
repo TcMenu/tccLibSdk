@@ -401,6 +401,40 @@
         "visible": true,
         "staticDataInRAM": false
       }
+    },
+    {
+      "parentId": 0,
+      "type": "runtimeList",
+      "item": {
+        "initialRows": 10,
+        "listCreationMode": "CUSTOM_RTCALL",
+        "name": "List Custom",
+        "variableName": "ListCustom",
+        "id": 24,
+        "eepromAddress": -1,
+        "functionName": "",
+        "readOnly": false,
+        "localOnly": false,
+        "visible": true,
+        "staticDataInRAM": false
+      }
+    },
+    {
+      "parentId": 0,
+      "type": "runtimeList",
+      "item": {
+        "initialRows": 7,
+        "listCreationMode": "FLASH_ARRAY",
+        "name": "Flash List",
+        "variableName": "FlashList",
+        "id": 25,
+        "eepromAddress": -1,
+        "functionName": "",
+        "readOnly": false,
+        "localOnly": false,
+        "visible": true,
+        "staticDataInRAM": false
+      }
     }
   ],
   "codeOptions": {
@@ -410,7 +444,7 @@
     "lastRemoteUuids": [
       "DFE97583-1897-4F87-BEFA-10CB72C43F0E"
     ],
-    "lastThemeUuid": "815316bb-76c9-436a-8f83-be0bced963df",
+    "lastThemeUuid": "b186c809-d9ef-4ca8-9d4b-e4780a041ccc",
     "applicationUUID": "3acc6301-dadd-4730-b142-9541180d2aa8",
     "applicationName": "ControlAppOledEncoderPico",
     "lastProperties": [
@@ -528,36 +562,6 @@
         "name": "ENCODER_IS_QUARTER_CYCLE",
         "latestValue": "false",
         "subsystem": "INPUT"
-      },
-      {
-        "name": "ITEM_FONT",
-        "latestValue": "ada:Org_01,1",
-        "subsystem": "THEME"
-      },
-      {
-        "name": "TITLE_FONT",
-        "latestValue": "ada:Org_01,1",
-        "subsystem": "THEME"
-      },
-      {
-        "name": "TITLE_BORDER_WIDTH",
-        "latestValue": "1",
-        "subsystem": "THEME"
-      },
-      {
-        "name": "TITLE_TO_ITEM_SPACING",
-        "latestValue": "2",
-        "subsystem": "THEME"
-      },
-      {
-        "name": "TITLE_SHOW_MODE",
-        "latestValue": "TITLE_FIRST_ROW",
-        "subsystem": "THEME"
-      },
-      {
-        "name": "USE_TC_UNICODE",
-        "latestValue": "true",
-        "subsystem": "THEME"
       }
     ],
     "namingRecursive": false,
@@ -578,5 +582,18 @@
       "Serial Mobile"
     ]
   },
-  "stringLists": []
+  "stringLists": [
+    {
+      "id": 25,
+      "listItems": [
+        "Ford Focus",
+        "Ford Escort",
+        "Ford Smax",
+        "Ford Fiesta",
+        "Ford Focus RS",
+        "Ford Escort RS",
+        "Escort Cosworth"
+      ]
+    }
+  ]
 }
