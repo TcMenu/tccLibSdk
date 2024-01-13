@@ -49,12 +49,15 @@ extern TextMenuItem menuPassword;
 extern TextMenuItem menuSSID;
 extern BackMenuItem menuBackConnectivity;
 extern SubMenuItem menuConnectivity;
+extern EditableLargeNumberMenuItem menuLarge;
 extern Rgb32MenuItem menuRGB;
 extern TimeFormattedMenuItem menuTime;
 extern TextMenuItem menuText;
 extern BackMenuItem menuBackRuntimeItems;
 extern SubMenuItem menuRuntimeItems;
-extern EditableLargeNumberMenuItem menuLarge;
+extern BooleanMenuItem menuProtect;
+extern BooleanMenuItem menuDirect;
+extern ActionMenuItem menuMute;
 extern FloatMenuItem menuFloat;
 extern AnalogMenuItem menuAnalog;
 

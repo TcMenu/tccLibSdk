@@ -41,15 +41,43 @@
     },
     {
       "parentId": 0,
-      "type": "largeNumItem",
-      "defaultValue": "0",
+      "type": "actionMenu",
       "item": {
-        "digitsAllowed": 9,
-        "decimalPlaces": 3,
-        "negativeAllowed": true,
-        "name": "%menu.large.name",
-        "variableName": "Large",
-        "id": 3,
+        "name": "Mute",
+        "variableName": "Mute",
+        "id": 19,
+        "eepromAddress": -1,
+        "readOnly": false,
+        "localOnly": false,
+        "visible": true,
+        "staticDataInRAM": false
+      }
+    },
+    {
+      "parentId": 0,
+      "type": "boolItem",
+      "defaultValue": "false",
+      "item": {
+        "naming": "TRUE_FALSE",
+        "name": "Direct",
+        "variableName": "Direct",
+        "id": 20,
+        "eepromAddress": -1,
+        "readOnly": false,
+        "localOnly": false,
+        "visible": true,
+        "staticDataInRAM": false
+      }
+    },
+    {
+      "parentId": 0,
+      "type": "boolItem",
+      "defaultValue": "false",
+      "item": {
+        "naming": "TRUE_FALSE",
+        "name": "Protect",
+        "variableName": "Protect",
+        "id": 21,
         "eepromAddress": -1,
         "readOnly": false,
         "localOnly": false,
@@ -115,6 +143,24 @@
         "name": "RGB",
         "variableName": "RGB",
         "id": 7,
+        "eepromAddress": -1,
+        "readOnly": false,
+        "localOnly": false,
+        "visible": true,
+        "staticDataInRAM": false
+      }
+    },
+    {
+      "parentId": 4,
+      "type": "largeNumItem",
+      "defaultValue": "0",
+      "item": {
+        "digitsAllowed": 9,
+        "decimalPlaces": 3,
+        "negativeAllowed": true,
+        "name": "%menu.large.name",
+        "variableName": "Large",
+        "id": 3,
         "eepromAddress": -1,
         "readOnly": false,
         "localOnly": false,
@@ -271,6 +317,7 @@
         "variableName": "Cars",
         "id": 18,
         "eepromAddress": -1,
+        "functionName": "",
         "readOnly": false,
         "localOnly": false,
         "visible": true,
@@ -386,17 +433,17 @@
       },
       {
         "name": "MK_ROW_PIN_0",
-        "latestValue": "16",
+        "latestValue": "22",
         "subsystem": "INPUT"
       },
       {
         "name": "MK_ROW_PIN_1",
-        "latestValue": "17",
+        "latestValue": "21",
         "subsystem": "INPUT"
       },
       {
         "name": "MK_ROW_PIN_2",
-        "latestValue": "18",
+        "latestValue": "20",
         "subsystem": "INPUT"
       },
       {
@@ -406,17 +453,17 @@
       },
       {
         "name": "MK_COL_PIN_0",
-        "latestValue": "20",
+        "latestValue": "18",
         "subsystem": "INPUT"
       },
       {
         "name": "MK_COL_PIN_1",
-        "latestValue": "21",
+        "latestValue": "17",
         "subsystem": "INPUT"
       },
       {
         "name": "MK_COL_PIN_2",
-        "latestValue": "22",
+        "latestValue": "16",
         "subsystem": "INPUT"
       },
       {
