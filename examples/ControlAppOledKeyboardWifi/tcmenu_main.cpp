@@ -79,6 +79,14 @@ const uint8_t muteIconReg[] PROGMEM = {
 
 };
 
+// PALETTE_2BPP width=8, height=3, size=3
+// auto size = Coord(8, 3);
+const color_t var1_palette[] PROGMEM { RGB(0,0,0), RGB(255,255,255), RGB(255,0,0), RGB(0,0,255) };
+const uint8_t var13[] PROGMEM = {
+        0x03,0x02,0x01,0x06,0x05,0x04
+};
+DrawableIcon icon(202, Coord(20, 20), tcgfx::DrawableIcon::ICON_PALLETE_2BPP, var1_palette, muteIconReg);
+
 void setupTheme() {
     color_t defaultItemPaletteMono[] = {WHITE, BLACK, WHITE, WHITE};
     TcThemeBuilder themeBuilder(renderer);
