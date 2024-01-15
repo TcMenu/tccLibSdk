@@ -50,7 +50,7 @@ int main() {
     switches.changeEncoderPrecision(100, 50);
 
     while(1) {
-        taskManager.rpiSleepingRunLoop();
+        taskManager.runLoop();
     }
 }
 

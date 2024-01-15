@@ -41,6 +41,24 @@
     },
     {
       "parentId": 0,
+      "type": "largeNumItem",
+      "defaultValue": "0",
+      "item": {
+        "digitsAllowed": 9,
+        "decimalPlaces": 3,
+        "negativeAllowed": true,
+        "name": "%menu.large.name",
+        "variableName": "Large",
+        "id": 3,
+        "eepromAddress": -1,
+        "readOnly": false,
+        "localOnly": false,
+        "visible": true,
+        "staticDataInRAM": false
+      }
+    },
+    {
+      "parentId": 0,
       "type": "actionMenu",
       "item": {
         "name": "Mute",
@@ -143,24 +161,6 @@
         "name": "RGB",
         "variableName": "RGB",
         "id": 7,
-        "eepromAddress": -1,
-        "readOnly": false,
-        "localOnly": false,
-        "visible": true,
-        "staticDataInRAM": false
-      }
-    },
-    {
-      "parentId": 4,
-      "type": "largeNumItem",
-      "defaultValue": "0",
-      "item": {
-        "digitsAllowed": 9,
-        "decimalPlaces": 3,
-        "negativeAllowed": true,
-        "name": "%menu.large.name",
-        "variableName": "Large",
-        "id": 3,
         "eepromAddress": -1,
         "readOnly": false,
         "localOnly": false,
@@ -368,7 +368,7 @@
       },
       {
         "name": "DISPLAY_I2C_ADDR",
-        "latestValue": "0xFF",
+        "latestValue": "0x3C",
         "subsystem": "DISPLAY"
       },
       {
