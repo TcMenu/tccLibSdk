@@ -13,6 +13,12 @@ These libraries provide several useful extensions that make programming embedded
 
 **For Arduino and PlatformIO, see the links below or just library manager**, this is just a grouping of all the libraries for those that wish to use CMake with a native toolchain such as PicoSDK.
 
+## Working with Native tool chains in production
+
+Please note that commercial support for this CMake toolchain is offered, [contact us via our website for details](https://www.thecoderscorner.com/support-services/training-support/). _Please do not ask questions about the commercial use of this toolchain in the regular discussion forums_.
+
+We can support this toolchain on RP2040 PicoSDK, ESP-IDF, STM32Cube, Atmel AVR and SAMD. Please the the above link for more information.
+
 ## How to use these libraries
 
 All the coders corner libraries as a CMake artifact usable directly by Pico SDK. The links below are the main source for most of our libraries, apart from a few native only libraries hosted here.
@@ -30,9 +36,8 @@ For all CMake cases you need a copy of all the libraries, run git submodule init
 
     git submodule update --init --recursive
 
-Once this is done, ensure that you have CMake installed along with any native toolchains needed.
+Once this is done, ensure that you have CMake installed along with any native toolchains needed. As above, unlike the Arduino version, any commercial usage should be under a [support agreement with us](https://www.thecoderscorner.com/support-services/training-support/). _Please do not ask questions about the commercial use of this toolchain in the regular discussion forums_.
 
-Please note that commercial support for this CMake toolchain is offered, [contact us via our website for details](https://www.thecoderscorner.com/support-services/training-support/). _Please do not ask questions about the commercial use of this toolchain in the regular discussion forums_.
 
 ### Using in PicoSDK
 
@@ -76,8 +81,5 @@ The original readme is available here [Adafruit_GFX Fork README.md](AdafruitGFXN
 * Test rotary encoders/switches/LCD on other than 8574 IoExpanders and with interrupts.
 * USB remote support for PicoSDK
 * WiFi/LwIP remote support for PicoSDK
-* ESP IDF CMake support
-* Stm32Cube CMake support
-* mbed CMake support
 * Adafruit Fork I2C/SPI retest with mbed.
 * Better way to create fonts
