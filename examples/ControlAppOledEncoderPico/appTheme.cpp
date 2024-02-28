@@ -3,7 +3,7 @@
 
 #include <graphics/TcThemeBuilder.h>
 #include "generated/ControlAppOledEncoderPico_menu.h"
-#include <Fonts/Org_01.h>
+#include <Fonts/OpenSansRegular8pt.h>
 
 // Direct width=20, height=20, size=60
 const uint8_t directBitmapOn[] PROGMEM = {
@@ -40,13 +40,14 @@ void setupTheme() {
     color_t defaultItemPaletteMono[] = {WHITE, BLACK, WHITE, WHITE};
     TcThemeBuilder themeBuilder(renderer);
     themeBuilder.withSelectedColors(0, 1)
+        .dimensionsFromRenderer()
         .withRenderingSettings(BaseGraphicalRenderer::TITLE_FIRST_ROW, false)
         .enablingTcUnicode()
         .withItemPadding(MenuPadding(1))
         .withTitlePadding(MenuPadding(1))
         .withStandardLowResCursorIcons()
         .withPalette(defaultItemPaletteMono)
-        .withAdaFont(&Org_01, 1)
+        .withTcUnicodeFont(OpenSansRegular8pt)
         .withSpacing(2);
 
     themeBuilder.defaultItemProperties()
@@ -62,28 +63,15 @@ void setupTheme() {
             .withJustification(tcgfx::GridPosition::JUSTIFY_CENTER_NO_VALUE)
             .apply();
 
+    themeBuilder.menuItemOverride(menuDirect)
+            .onRowCol(3, 1, 2)
+            .withImageXbmp(Coord(20, 20), directBitmapOff, directBitmapOn)
+            .apply();
 
-    themeBuilder.defineRowWithCols(3, 2, [] (TcThemeBuilder& t) {
-        t.menuItemOverride(menuDirect)
-                .onCol(1)
-                .withImageXbmp(Coord(20, 20), directBitmapOff, directBitmapOn)
-                .apply();
-
-        t.menuItemOverride(menuMute)
-                .onCol(2)
-                .withImageXbmp(Coord(20, 20), speakerBitmapOff, speakerBitmapOn)
-                .apply();
-    });
-
-//    themeBuilder.menuItemOverride(menuDirect)
-//            .onCol(1, 2).onRow(3)
-//            .withImageXbmp(Coord(20, 20), directBitmapOff, directBitmapOn)
-//            .apply();
-//
-//    themeBuilder.menuItemOverride(menuMute)
-//            .onCol(2, 2).onRow(3)
-//            .withImageXbmp(Coord(20, 20), speakerBitmapOff, speakerBitmapOn)
-//            .apply();
+    themeBuilder.menuItemOverride(menuMute)
+            .onRowCol(3, 2, 2)
+            .withImageXbmp(Coord(20, 20), speakerBitmapOff, speakerBitmapOn)
+            .apply();
 
     themeBuilder.apply();
 }
