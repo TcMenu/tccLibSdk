@@ -15,7 +15,7 @@ These libraries provide several useful extensions that make programming embedded
 
 ## Working with Native tool chains in production
 
-Please note that commercial support for this CMake toolchain is offered, [contact us via our website for details](https://www.thecoderscorner.com/support-services/training-support/). _Please do not ask questions about the commercial use of this toolchain in the regular discussion forums_.
+_Commercial users: Before asking any questions in the tcMenu discussion board about this project, please make a donation commensurate with your companies funds_. This configuration will not be maintained unless we get enough donations.
 
 We can support this toolchain on RP2040 PicoSDK, ESP-IDF, STM32Cube, Atmel AVR and SAMD. Please the the above link for more information.
 
