@@ -71,11 +71,10 @@ void setupMenu();
 // Callback functions must always include CALLBACK_FUNCTION after the return type
 #define CALLBACK_FUNCTION
 
+void CALLBACK_FUNCTION StatusAppeared(int id);
 int fnListCustomRtCall(RuntimeMenuItem* item, uint8_t row, RenderFnMode mode, char* buffer, int bufferSize);
 void CALLBACK_FUNCTION onEnableChange(int id);
 void CALLBACK_FUNCTION onShowDialog(int id);
 void CALLBACK_FUNCTION onVolumeChanged(int id);
-
-extern const EmbedControlFlashedForm* tcMenuAllEmbeddedForms[];
 
 #endif // MENU_GENERATED_CODE_H

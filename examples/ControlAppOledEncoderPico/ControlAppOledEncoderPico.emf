@@ -85,6 +85,7 @@
         "variableName": "Status",
         "id": 5,
         "eepromAddress": -1,
+        "functionName": "StatusAppeared",
         "readOnly": false,
         "localOnly": false,
         "visible": true,
@@ -578,9 +579,7 @@
     },
     "packageNamespace": "",
     "appIsModular": false,
-    "listOfEmbeddedForms": [
-      "Serial Mobile"
-    ]
+    "listOfEmbeddedForms": []
   },
   "stringLists": [
     {

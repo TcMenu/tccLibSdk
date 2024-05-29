@@ -100,3 +100,7 @@ int CALLBACK_FUNCTION fnListCustomRtCall(RuntimeMenuItem* item, uint8_t row, Ren
         return defaultRtListCallback(item, row, mode, buffer, bufferSize);
     }
 }
+
+void CALLBACK_FUNCTION StatusAppeared(int id) {
+    serlogF(SER_DEBUG, "Status menu has appeared");
+}
