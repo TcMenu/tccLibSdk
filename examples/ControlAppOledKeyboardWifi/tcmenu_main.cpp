@@ -114,17 +114,17 @@ void setupTheme() {
             .apply();
 
     themeBuilder.menuItemOverride(menuMute)
-        .onRow(3).multiCol(1, 3)
+        .onRowCol(3, 1, 3)
         .withMonoBitmap(Coord(20, 20), muteIconReg)
         .apply();
 
     themeBuilder.menuItemOverride(menuDirect)
-        .onRow(3).multiCol(2, 3)
+        .onRowCol(3, 2, 3)
         .withMonoBitmap(Coord(20, 20), directIconOff, directIconOn)
         .apply();
 
     themeBuilder.menuItemOverride(menuProtect)
-        .onRow(3).multiCol(3, 3)
+        .onRowCol(3, 3, 3)
         .withImageXbmp(Coord(20, 20), protectIconOff, protectIconOn)
         .apply();
 
