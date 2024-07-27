@@ -23,12 +23,12 @@ We can support this toolchain on RP2040 PicoSDK, ESP-IDF, STM32Cube, Atmel AVR a
 
 All the coders corner libraries as a CMake artifact usable directly by Pico SDK. The links below are the main source for most of our libraries, apart from a few native only libraries hosted here.
 
-* https://github.com/davetcc/TaskManagerIO
-* https://github.com/davetcc/tcMenuLib
-* https://github.com/davetcc/IoAbstraction
-* https://github.com/davetcc/tcUnicodeHelper
-* https://github.com/davetcc/SimpleCollections
-* https://github.com/davetcc/LiquidCrystalIO
+* https://github.com/TcMenu/TaskManagerIO
+* https://github.com/TcMenu/tcMenuLib
+* https://github.com/TcMenu/IoAbstraction
+* https://github.com/TcMenu/tcUnicodeHelper
+* https://github.com/TcMenu/SimpleCollections
+* https://github.com/TcMenu/LiquidCrystalIO
 
 ## General usage instructions
 

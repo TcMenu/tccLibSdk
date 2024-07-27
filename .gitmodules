@@ -1,18 +1,18 @@
 [submodule "tcMenu"]
 	path = tcMenu
-	url = https://github.com/davetcc/tcMenuLib.git
+	url = https://github.com/TcMenu/tcMenuLib.git
 [submodule "IoAbstraction"]
 	path = IoAbstraction
-	url = https://github.com/davetcc/IoAbstraction.git
+	url = https://github.com/TcMenu/IoAbstraction.git
 [submodule "SimpleCollections"]
 	path = SimpleCollections
-	url = https://github.com/davetcc/SimpleCollections.git
+	url = https://github.com/TcMenu/SimpleCollections.git
 [submodule "tcUnicodeHelper"]
 	path = tcUnicodeHelper
-	url = https://github.com/davetcc/tcUnicodeHelper.git
+	url = https://github.com/TcMenu/tcUnicodeHelper.git
 [submodule "TaskManagerIO"]
 	path = TaskManagerIO
-	url = https://github.com/davetcc/TaskManagerIO.git
+	url = https://github.com/TcMenu/TaskManagerIO.git
 [submodule "LiquidCrystalIO"]
 	path = LiquidCrystalIO
-	url = https://github.com/davetcc/LiquidCrystalIO.git
+	url = https://github.com/TcMenu/LiquidCrystalIO.git
